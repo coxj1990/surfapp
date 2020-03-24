@@ -8,9 +8,8 @@ my_phone_number = environ['MY_PHONE_NUMBER']
 
 def send_message(body):
     client = Client(account_sid, auth_token)
-    message = client.messages \
-                .create(
-                    body=body,
-                    messaging_service_sid=messaging_service_id,
-                    to=my_phone_number
-                )
+    client.messages.create(
+        body=body,
+        messaging_service_sid=messaging_service_id,
+        to=my_phone_number
+    )
